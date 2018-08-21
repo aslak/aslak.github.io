@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+	<title></title>
+	<meta charset="utf-8" />
+	<script src="showdown.min.js"></script>
+    </head>
+    <body>
+	<script src="https://gist.github.com/aslak/33f8f57566f670995a7dffbab200b703.js"></script>
+
+      <div id="markdown"></div>
+      <script>
+       var converter = new showdown.Converter();
+       var markdownarea = document.getElementById("markdown");
+       fetch("infrastructurewalk.md").then(function(response) {
+	   return (response.text());
+       }).then(function(response) {
+	   markdownarea.innerHTML = converter.makeHtml(response);
+       });
+      </script>
+    </body>
+</html>
